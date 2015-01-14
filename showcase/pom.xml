@@ -1,0 +1,47 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <artifactId>multiple-os-enforcer-rule-parent</artifactId>
+    <groupId>com.github.tmarwen.maven.plugins</groupId>
+    <version>1.0</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>showcase</artifactId>
+  <packaging>jar</packaging>
+
+  <name>Maven :: Plugins :: Multiple OSs Enforcer Rule :: Rule Showcase</name>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-enforcer-plugin</artifactId>
+        <version>${api.version}</version>
+        <dependencies>
+          <dependency>
+            <groupId>com.github.tmarwen.maven.plugins</groupId>
+            <artifactId>multiple-os-enforcer-rule</artifactId>
+            <version>1.0</version>
+          </dependency>
+        </dependencies>
+        <executions>
+          <execution>
+            <id>enforce-os</id>
+            <configuration>
+              <rules>
+                <multipleOsRule implementation="com.github.tmarwen.maven.plugins.MultipleOsRule">
+                  <requiredOSs>linux,windows,macos</requiredOSs>
+                </multipleOsRule>
+              </rules>
+            </configuration>
+            <goals>
+              <goal>enforce</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
