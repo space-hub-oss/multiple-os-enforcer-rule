@@ -1,4 +1,4 @@
-# Multiple OSs Rule for the *maven-enforcer-plugin*
+## Multiple OSs Rule for the *maven-enforcer-plugin*
 
 This Project implements a custom enforcer rule to bypass the classic
 ``` xml
@@ -60,7 +60,7 @@ To use the *multiple-os-enforcer-rule*, you have to:
 ```
 Check the ```<requireOSs>``` (with "s") section where you can define a list of the allowed Operating Systems where build should succeed.
 
-A glance of how the build section may be can be found under [the *showcase* module](https://github.com/wisebrains/multiple-os-enforcer-rule/showcase) which emphasize the new rule power.
+A glance of how the build section may be can be found under [the *showcase* module](https://github.com/wisebrains/multiple-os-enforcer-rule/blob/master/showcase/pom.xml) which emphasize the new rule power.
 Just run the module build:
 ```
     mvn clean package -pl :showcase
